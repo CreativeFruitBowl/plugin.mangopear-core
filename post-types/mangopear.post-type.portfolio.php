@@ -88,6 +88,8 @@
 				'publicly_queryable'	=> true,
 				'rewrite'				=> $rewrite,
 				'capability_type'		=> 'page',
+
+				'show_in_rest'			=> true,
 			);
 
 
