@@ -29,9 +29,6 @@
 	 *
 	 * [1]	Global variables
 	 * [2]	Post type registration
-	 * [3]	Functions that hook into plugin or core filters
-	 * [4]	Custom functions to output a value
-	 * [5]	Custom functions to return data
 	 */
 	
 
@@ -55,10 +52,6 @@
 	 * 		Group of includes for our various custom post types
 	 *
 	 * 		[a]	Portfolio items
-	 * 		[b]	Useful resources
-	 * 		[c]	Our views
 	 */
 
 	require_once $plugin_path . 'post-types/mangopear.post-type.portfolio.php'; 	// [a]
-	require_once $plugin_path . 'post-types/mangopear.post-type.resources.php'; 	// [b]
-	require_once $plugin_path . 'post-types/mangopear.post-type.our-views.php'; 	// [c]
