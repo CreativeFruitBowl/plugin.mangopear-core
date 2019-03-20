@@ -55,3 +55,15 @@
 	 */
 
 	require_once $plugin_path . 'post-types/mangopear.post-type.portfolio.php'; 	// [a]
+
+
+
+
+
+	/**
+	 * [3]	Register additional functions
+	 *
+	 * 		[a]	If user not logged in, redirect to log in URL
+	 */
+
+	require_once $plugin_path . 'functions/function.redirect-if-not-logged-in.php'; 	// [a]
