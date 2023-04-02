@@ -52,9 +52,17 @@
 	 * 		Group of includes for our various custom post types
 	 *
 	 * 		[a]	Portfolio items
+	 * 		[b]	Coding: Useful resources
+	 * 		[c]	Coding: Articles
+	 * 		[d]	Witterings: Articles
 	 */
 
 	require_once $plugin_path . 'post-types/mangopear.post-type.portfolio.php'; 	// [a]
+
+	require_once $plugin_path . 'post-types/post-type.coding.resources.php'; 		// [b]
+	require_once $plugin_path . 'post-types/post-type.coding.articles.php'; 		// [c]
+
+	require_once $plugin_path . 'post-types/post-type.witterings.articles.php'; 	// [d]
 
 
 

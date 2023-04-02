@@ -57,7 +57,7 @@
 			
 			$rewrite = array(
 				'slug'					=> 'our-work',
-				'with_front'			=> true,
+				'with_front'			=> false,
 				'hierarchical'          => true,
 				'pages'					=> true,
 				'feeds'					=> true,
@@ -88,6 +88,7 @@
 				'publicly_queryable'	=> true,
 				'rewrite'				=> $rewrite,
 				'capability_type'		=> 'page',
+				'menu_position'			=> 53,
 
 				'show_in_rest'			=> true,
 			);
