@@ -88,7 +88,7 @@
 				'publicly_queryable'	=> true,
 				'rewrite'				=> $rewrite,
 				'capability_type'		=> 'page',
-				'menu_position'			=> 53,
+				'menu_position'			=> 40,
 
 				'show_in_rest'			=> true,
 			);

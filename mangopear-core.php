@@ -75,3 +75,49 @@
 	 */
 
 	require_once $plugin_path . 'functions/function.redirect-if-not-logged-in.php'; 	// [a]
+
+
+
+
+
+	/**
+	 * [4]	Custom admin menu order
+	 *
+	 * 		@since 10.0.0
+	 *
+	 * 		[a]	
+	 */
+	
+	function mangopear_add_admin_menu_separator($position) {
+		global $menu;
+		$index = 0;
+
+
+		foreach($menu as $offset => $section) {
+			if (substr($section[2],0,9)=='separator') {
+				$index++;
+			}
+
+
+			if ($offset>=$position) {
+				$menu[$position] = array('','read',"separator{$index}",'','wp-menu-separator');
+				break;
+			}
+		}
+
+
+		ksort( $menu );
+	}
+
+
+
+
+
+	function mangopear_add_seperators() {
+		mangopear_add_admin_menu_separator(36);
+		mangopear_add_admin_menu_separator(42);
+		mangopear_add_admin_menu_separator(48);
+	}
+
+
+	add_action('admin_init', 'mangopear_add_seperators', 0);

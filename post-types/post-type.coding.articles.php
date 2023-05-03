@@ -89,7 +89,7 @@
 				'rewrite'				=> $rewrite,
 				'capability_type'		=> 'page',
 				'show_in_rest'			=> true,
-				'menu_position'			=> 51,
+				'menu_position'			=> 37,
 
 				'show_in_rest'			=> true,
 			);
