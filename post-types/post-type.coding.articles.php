@@ -57,9 +57,9 @@
 			 */
 			
 			$rewrite = array(
-				'slug'					=> 'coding/articles',
+				'slug'					=> 'coding/articles/%year%/%monthnum%',
 				'with_front'			=> false,
-				'pages'					=> true,
+				'pages'					=> false,
 				'feeds'					=> true,
 			);
 
@@ -108,6 +108,28 @@
 		 */
 		
 		add_action('init', 'mangopear_register_type_coding_articles', 0);
+
+
+
+
+
+		/**
+		 * [6]	Change custom permalinks
+		 *
+		 * 		@since 2.0.0
+		 */
+		
+		function fruit_bowl_register_type_coding_articles_permalinks($url, $post) {
+			if (get_post_type($post) == 'coding_articles') :
+				$url = str_replace('%year%',     get_the_date('Y'), $url);
+				$url = str_replace('%monthnum%', get_the_date('m'), $url);
+			endif;
+
+			return $url;
+		}
+
+
+		add_filter('post_type_link', 'fruit_bowl_register_type_coding_articles_permalinks', 10, 2);
 	}
 
 

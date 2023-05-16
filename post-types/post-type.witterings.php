@@ -37,18 +37,18 @@
 			
 			$labels = array(
 				'name'					=> _x('Witterings: Articles',	'Post Type General Name', 	'mangopear'),
-				'singular_name'			=> _x('Article',				'Post Type Singular Name',	'mangopear'),
-				'menu_name'				=> __('Witterings: Articles',	'mangopear'),
-				'parent_item_colon'		=> __('Parent article:',	'mangopear'),
-				'all_items'				=> __('All articles',		'mangopear'),
-				'view_item'				=> __('View article',		'mangopear'),
-				'add_new_item'			=> __('Add new article',	'mangopear'),
-				'add_new'				=> __('Add new',			'mangopear'),
-				'edit_item'				=> __('Edit article',		'mangopear'),
-				'update_item'			=> __('Update article',		'mangopear'),
-				'search_items'			=> __('Search articles',	'mangopear'),
-				'not_found'				=> __('Not found',			'mangopear'),
-				'not_found_in_trash'	=> __('Not found in trash',	'mangopear'),
+				'singular_name'			=> _x('Witterings article',		'Post Type Singular Name',	'mangopear'),
+				'menu_name'				=> __('Witterings: Articles',								'mangopear'),
+				'parent_item_colon'		=> __('Parent article:',									'mangopear'),
+				'all_items'				=> __('All articles',										'mangopear'),
+				'view_item'				=> __('View article',										'mangopear'),
+				'add_new_item'			=> __('Add new article',									'mangopear'),
+				'add_new'				=> __('Add new',											'mangopear'),
+				'edit_item'				=> __('Edit article',										'mangopear'),
+				'update_item'			=> __('Update article',										'mangopear'),
+				'search_items'			=> __('Search articles',									'mangopear'),
+				'not_found'				=> __('Not found',											'mangopear'),
+				'not_found_in_trash'	=> __('Not found in trash',									'mangopear'),
 			);
 
 
@@ -57,9 +57,9 @@
 			 */
 			
 			$rewrite = array(
-				'slug'					=> 'witterings',
+				'slug'					=> 'witterings/%year%/%monthnum%',
 				'with_front'			=> false,
-				'pages'					=> true,
+				'pages'					=> false,
 				'feeds'					=> true,
 			);
 
@@ -108,6 +108,28 @@
 		 */
 		
 		add_action('init', 'mangopear_register_type_witterings_articles', 0);
+
+
+
+
+
+		/**
+		 * [6]	Change custom permalinks
+		 *
+		 * 		@since 2.0.0
+		 */
+		
+		function fruit_bowl_register_type_witterings_articles_permalinks($url, $post) {
+			if (get_post_type($post) == 'witterings') :
+				$url = str_replace('%year%',     get_the_date('Y'), $url);
+				$url = str_replace('%monthnum%', get_the_date('m'), $url);
+			endif;
+
+			return $url;
+		}
+
+
+		add_filter('post_type_link', 'fruit_bowl_register_type_witterings_articles_permalinks', 10, 2);
 	}
 
 

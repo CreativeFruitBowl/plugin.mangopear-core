@@ -62,7 +62,8 @@
 	require_once $plugin_path . 'post-types/post-type.coding.resources.php'; 		// [b]
 	require_once $plugin_path . 'post-types/post-type.coding.articles.php'; 		// [c]
 
-	require_once $plugin_path . 'post-types/post-type.witterings.articles.php'; 	// [d]
+	require_once $plugin_path . 'post-types/post-type.witterings.php'; 	// [d]
+	require_once $plugin_path . 'post-types/post-type.press.php'; 	// [d]
 
 
 
@@ -114,7 +115,8 @@
 
 
 	function mangopear_add_seperators() {
-		mangopear_add_admin_menu_separator(36);
+		mangopear_add_admin_menu_separator(35);
+		mangopear_add_admin_menu_separator(40);
 		mangopear_add_admin_menu_separator(42);
 		mangopear_add_admin_menu_separator(48);
 	}
