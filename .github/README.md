@@ -1,5 +1,3 @@
-## Private plugin
+Child theme of Mangopear-core.
 
-Used on the Mangopear website.
-
-Adds `portfolio` post type and `if_not_logged_in` function.
+To be replaced very shortly by The Very Creative Fruit Bowl Company website, where this code will be subsumed into the Fruit Bowl Co WordPress theme.
